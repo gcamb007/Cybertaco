@@ -17,5 +17,5 @@ var routes = require("./controllers/tacoControllers.js");
 app.use(routes);
 
 app.listen(PORT, function() {
-  console.log("App now listening at localhost:" + PORT);
+  console.log("App now listening on localhost:" + PORT);
 });

@@ -1,38 +1,41 @@
 <h1>Tacos!</h1>
 
-<h2>Picked up tacos!</h2>
+<h2>Ready to go tacos!</h2>
 
-<ul>
+<ol>
   {{#each tacos}}
     {{#unless pickedUp}}
       {{> tacos/taco-block pickedUp=true}}
     {{/unless}}
   {{/each}}
-</ul>
+</ol>
 
-<h2>Ready to go tacos!</h2>
+<h2>Picked up tacos!</h2>
 
-<ul>
+<ol>
   {{#each tacos}}
     {{#if pickedUp}}
       {{> tacos/taco-block pickedUp=false}}
     {{/if}}
   {{/each}}
-</ul>
+</ol>
 
 <h2>Add a Taco</h2>
 <form class="create-form">
 
   <div class="form-group">
     <label for="ta">Taco Name:</label>
-    <input type="text" id="ta" name="name">
+    <input type="text" id="ta" name="taco_name">
   </div>
 
   <div class="form-group">
     <label for="vegetarian">Vegetarian?</label><br>
     <input type="radio" name="vegetarian" value="1" checked> Vegetarian!<br>
     <input type="radio" name="vegetarian" value="0"> Not Vegetarian!
+    <label for="vegetarian">Hard or soft?</label><br>
+    <input type="radio" name="shell" value="1" checked> Hard!<br>
+    <input type="radio" name="shell" value="0"> Soft!
   </div>
 
-  <button type="submit">Add Taco</button>
+  <button type="submit">Add Taco!</button>
 </form>

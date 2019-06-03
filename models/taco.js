@@ -1,18 +1,18 @@
 var orm = require("../config/orm.js");
 
 var taco = {
-  all: function(cb) {
-    orm.selectAll(function(res) {
+  selectAll: function(cb) {
+    orm.selectAll("tacos", function(res) {
       cb(res);
     });
   },
-  create: function(cols, vals, cb) {
-    orm.create("tacos", cols, vals, function(res) {
+  insertOne: function(cols, vals, cb) {
+    orm.insertOne("tacos", cols, vals, function(res) {
       cb(res);
     });
   },
-  update: function(objColVals, condition, cb) {
-    orm.update("tacos", objColVals, condition, function(res) {
+  updateOne: function(objColVals, condition, cb) {
+    orm.updateOne("tacos", objColVals, condition, function(res) {
       cb(res);
     });
   },
@@ -23,5 +23,4 @@ var taco = {
   }
 };
 
-// Export the database functions for the controller (catsController.js).
 module.exports = taco;

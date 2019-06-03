@@ -7,6 +7,6 @@ CREATE TABLE tacos
 	taco_name VARCHAR(50) NOT NULL,
     shell VARCHAR(10) NOT NULL,
 	vegetarian BOOLEAN,
-    picked_up BOOLEAN,
+    picked_up BOOLEAN DEFAULT false,
 	PRIMARY KEY (id)
 );
