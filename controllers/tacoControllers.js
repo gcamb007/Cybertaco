@@ -14,9 +14,9 @@ router.get("/", function(req, res) {
 
 router.post("/api/tacos", function(req, res) {
   taco.insertOne([
-    "name", "vegetarian"
+    "taco_name", "vegetarian"
   ], [
-    req.body.name, req.body.vegetarian
+    req.body.taco_name, req.body.vegetarian
   ], function(result) {
     res.json({ id: result.insertId });
   });

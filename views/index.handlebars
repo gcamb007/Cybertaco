@@ -2,23 +2,23 @@
 
 <h2>Ready to go tacos!</h2>
 
-<ol>
+<ul>
   {{#each tacos}}
     {{#unless pickedUp}}
-      {{> tacos/taco-block pickedUp=true}}
+      {{> tacos/taco-block pickedUp=false}}
     {{/unless}}
   {{/each}}
-</ol>
+</ul>
 
 <h2>Picked up tacos!</h2>
 
-<ol>
+<ul>
   {{#each tacos}}
     {{#if pickedUp}}
-      {{> tacos/taco-block pickedUp=false}}
+      {{> tacos/taco-block pickedUp=true}}
     {{/if}}
   {{/each}}
-</ol>
+</ul>
 
 <h2>Add a Taco</h2>
 <form class="create-form">
@@ -31,10 +31,13 @@
   <div class="form-group">
     <label for="vegetarian">Vegetarian?</label><br>
     <input type="radio" name="vegetarian" value="1" checked> Vegetarian!<br>
-    <input type="radio" name="vegetarian" value="0"> Not Vegetarian!
+    <input type="radio" id="vegetarian" name="vegetarian" value="0"> Not Vegetarian!<br>
+  </div>
+
+  <div class="form-group">
     <label for="vegetarian">Hard or soft?</label><br>
-    <input type="radio" name="shell" value="1" checked> Hard!<br>
-    <input type="radio" name="shell" value="0"> Soft!
+    <input type="radio" name="shell" value="hard/corn" checked> Hard!<br>
+    <input type="radio" id="shell" name="shell" value="soft/flour"> Soft!
   </div>
 
   <button type="submit">Add Taco!</button>
