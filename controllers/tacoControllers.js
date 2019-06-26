@@ -2,8 +2,8 @@ var express = require("express");
 var router = express.Router();
 var taco = require("../models/taco.js");
 
-router.get("/", function(req, res) {
-  taco.selectAll(function(data) {
+router.get("/", function (req, res) {
+  taco.selectAll(function (data) {
     var hbsObject = {
       tacos: data
     };
@@ -12,24 +12,26 @@ router.get("/", function(req, res) {
   });
 });
 
-router.post("/api/tacos", function(req, res) {
+router.post("/api/tacos", function (req, res) {
   taco.insertOne([
-    "taco_name", "vegetarian"
+    "taco_name", "shell", "vegetarian"
   ], [
-    req.body.taco_name, req.body.vegetarian
-  ], function(result) {
-    res.json({ id: result.insertId });
+    req.body.taco_name, req.body.shell, req.body.vegetarian
+  ], function (result) {
+    res.json({
+      id: result.insertId
+    });
   });
 });
 
-router.put("/api/tacos/:id", function(req, res) {
+router.put("/api/tacos/:id", function (req, res) {
   var condition = "id = " + req.params.id;
 
   console.log("condition", condition);
 
   taco.updateOne({
     picked_up: req.body.picked_up
-  }, condition, function(result) {
+  }, condition, function (result) {
     if (result.changedRows == 0) {
       return res.status(404).end();
     } else {
@@ -38,10 +40,10 @@ router.put("/api/tacos/:id", function(req, res) {
   });
 });
 
-router.delete("/api/tacos/:id", function(req, res) {
+router.delete("/api/tacos/:id", function (req, res) {
   var condition = "id = " + req.params.id;
 
-  taco.delete(condition, function(result) {
+  taco.delete(condition, function (result) {
     if (result.affectedRows == 0) {
       return res.status(404).end();
     } else {

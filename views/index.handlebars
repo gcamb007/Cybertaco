@@ -5,6 +5,9 @@
 <ul>
   {{#each tacos}}
     {{#unless pickedUp}}
+    <p>
+      {{this.taco_name}}
+    </p>
       {{> tacos/taco-block pickedUp=false}}
     {{/unless}}
   {{/each}}

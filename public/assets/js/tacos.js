@@ -23,7 +23,7 @@ $(function () {
 
     var newTaco = {
       taco_name: $("#ta").val().trim(),
-      shell: $("#shell").val().trim(),
+      //shell: $("#shell").val().trim(),
       //vegetarian: $("[name=vegetarian]:checked")
     };
 
