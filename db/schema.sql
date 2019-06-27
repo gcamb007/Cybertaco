@@ -1,5 +1,5 @@
-CREATE DATABASE taco_db;
-USE taco_db;
+CREATE DATABASE qzu7lerqohn84ss0;
+USE qzu7lerqohn84ss0;
 
 CREATE TABLE tacos
 (

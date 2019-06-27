@@ -1,4 +1,4 @@
-USE taco_db;
+USE qzu7lerqohn84ss0;
 INSERT INTO tacos (taco_name, shell, vegetarian, picked_up)
 VALUES 
 ("Mijo", "hard/corn", false, false),
